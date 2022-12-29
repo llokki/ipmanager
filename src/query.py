@@ -7,7 +7,7 @@ import sys
 pydantic_ip = pydantic_model_creator(IpAddresses)
 pydantic_net = pydantic_model_creator(Networks)
 
-handler = FileHandler('./logs/ip_manager.log').push_application()
+handler = FileHandler('../logs/ip_manager.log').push_application()
 log = Logger('ip_manager')
 
 #IP-address existence check
