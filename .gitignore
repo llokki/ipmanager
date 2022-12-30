@@ -1,5 +1,6 @@
+*dbdata/
 src/app/*__pycache__/
-logs/*.log
+logs/**/*.log
 *venv/
 *.virtualenvs/
 *__pycache__/

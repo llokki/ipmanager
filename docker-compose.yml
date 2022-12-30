@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  mysql_db:
+    image: mysql:8
+    restart: always
+    ports:
+      - "3307:3307"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: ipmanager 
+      MYSQL_USER: admin2
+      MYSQL_PASSWORD: 5E1f!bEtTQN
+    volumes:
+      - ./dbdata:/var/lib/mysql/
+  app:
+    build: src/
+    command: uvicorn src.run:app --reload --host 45.8.228.19
+    ports:
+      - 8000:8000
+    depends_on: 
+      - mysql_db

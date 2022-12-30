@@ -1,10 +1,25 @@
-FROM ubuntu
-LABEL maintainer="eg.suraev@gmail.com"
+FROM ubuntu:latest
+LABEL maintainer="eg.shuraev@gmail.com"
 LABEL description="This file contains instructions for \
 creating an image for the Ip-manager project."
-RUN apt-get update && apt-get install python3-pip -y && \
-pip install --upgrade pip &&  pip install -U pydantic && \
-pip install tortoise-orm 
-WORKDIR /root/PilotProject_1/Project1Repo/ipmanager 
+RUN bash
+RUN apt-get update && \
+apt-get -y upgrade && \
+apt-get install -y python3-pip && \
+apt-get install -y python3.10-venv
+RUN python3 -m venv venv
+RUN /bin/bash -c "source venv/bin/activate"
+RUN pip install \
+        pydantic \
+        tortoise-orm
+ENV PIP_ROOT_USER_ACTION=ignore
+WORKDIR /src/
+COPY . src/createSchema.py
+RUN chmod +x src/createSchema.py
+CMD ["python", "./createSchema.py"]
+EXPOSE 8000
+
+
+ 
 
 
