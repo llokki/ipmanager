@@ -14,9 +14,13 @@ services:
     volumes:
       - ./dbdata:/var/lib/mysql/
   app:
-    build: src/
-    command: uvicorn src.run:app --reload --host 45.8.228.19
-    ports:
-      - 8000:8000
+    image: ipmanager
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: ipmanager
+      MYSQL_USER: admin2
+      MYSQL_PASSWORD: 5E1f!bEtTQN
+      MYSQL_HOST: mysql_db
     depends_on: 
       - mysql_db
+  
