@@ -20,7 +20,6 @@ services:
       MYSQL_DATABASE: ipmanager
       MYSQL_USER: admin2
       MYSQL_PASSWORD: 5E1f!bEtTQN
-      MYSQL_HOST: mysql_db
-    depends_on: 
+      MYSQL_HOST: "mysql_db"
+    depends_on:
       - mysql_db
-  

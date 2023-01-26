@@ -1,6 +1,7 @@
 *dbdata/
-src/app/*__pycache__/
+app/*__pycache__/
 logs/**/*.log
 *venv/
 *.virtualenvs/
 *__pycache__/
+Dockerfile_1

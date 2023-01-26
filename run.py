@@ -71,7 +71,7 @@ async def view_net():
 
 register_tortoise(
     app,
-    db_url='mysql://admin2:5E1f!bEtTQN@127.0.0.1:3306/ipmanager',
+    db_url='mysql://admin2:5E1f!bEtTQN@127.0.0.1:3307/ipmanager',
     modules={'models': ['app.models_def']},
     generate_schemas=True,
     add_exception_handlers=True,
