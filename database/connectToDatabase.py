@@ -3,9 +3,9 @@ from tortoise import Tortoise
 from tortoise.models import Model
 
 async def db_connect():
-    mysql_root_password = os.getenv('MYSQL_ROOT_PASSWORD','secret')
+    mysql_root_password = os.getenv('MYSQL_ROOT_PASSWORD','qTPD5ywU')
     mysql_database = os.getenv('MYSQL_DATABASE','ipmanager')
-    mysql_user = os.getenv('MYSQL_USER','admin2')
+    mysql_user = os.getenv('MYSQL_USER','admin1')
     mysql_password = os.getenv('MYSQL_PASSWORD','5E1f!bEtTQN')
     mysql_host = os.getenv('MYSQL_HOST','mysql_db')
     await Tortoise.init(
