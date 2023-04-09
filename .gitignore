@@ -4,4 +4,6 @@ logs/**/*.log
 *venv/
 *.virtualenvs/
 *__pycache__/
-Dockerfile_1
+Dockerfile
+gitkey
+gitkey.pub
